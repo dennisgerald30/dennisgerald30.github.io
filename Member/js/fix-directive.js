@@ -12,9 +12,9 @@
             link: function(scope,ele,attr){
                 var offset=ele[0].offsetTop;
                 win.on('scroll',function(e){
-                    if($window.scrollY > offset) {
+                    if($window.pageYOffset > offset) {
                         ele.addClass('fix');
-                        ele.css({'top': $window.scrollY - offset+ 'px'});
+                        ele.css({'top': $window.pageYOffset - offset+ 'px'});
                     }
                     else
                     {
