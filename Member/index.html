@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../society-members/app/css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../society-members/app/css/style.css" type="text/css" />
+
+    <title></title>
+</head>
+<body ng-app="UX-members" ng-controller="MainCtrl as mainvm">
+<img src="img/loader.gif" alt="loading" ng-hide="mainvm.members" class="fix-center"/>
+
+<div class="container" ng-show="mainvm.members">
+
+    <h1>UX Society Members</h1>
+
+    <input class="search" type="text" placeholder=" Search" ng-model="mainvm.search" ng-change="mainvm.updateSearch()">
+
+    <div class="members-table full-width">
+        <ul class="pagination pager">
+            <li ng-class="{'disabled': mainvm.currentPage-1 == 0}" ng-click="mainvm.changePage(mainvm.currentPage-1)"><a
+                    href="#">Previous</a></li>
+
+            <li ng-repeat="num in mainvm.numPages(mainvm.pgNum)" ng-click="mainvm.changePage(num)"
+                ng-class="{'active':num==mainvm.currentPage}"><a href="#">{{num}}</a></li>
+            <li ng-class="{'disabled': mainvm.currentPage+1 > mainvm.pgNum}"
+                ng-click="mainvm.changePage(mainvm.currentPage+1)"><a href="#">Next</a></li>
+        </ul>
+        <div class="dropdown right">
+            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+                {{mainvm.numPerPage}} records are displayed per page
+                <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                <li role="presentation" ng-class="{'disabled':25==mainvm.numPerPage}"
+                    ng-click="mainvm.changenumPerPage(25)"><a role="menuitem" href="#">Display 25 records</a></li>
+                <li role="presentation" ng-class="{'disabled':50==mainvm.numPerPage}"
+                    ng-click="mainvm.changenumPerPage(50)"><a role="menuitem" href="#">Display 50 records</a></li>
+                <li role="presentation" ng-class="{'disabled':100==mainvm.numPerPage}"
+                    ng-click="mainvm.changenumPerPage(100)"><a role="menuitem" href="#">Display 100 records</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="full-width clear">
+        <div class="members-details" ng-show="mainvm.currentmember" dir-fix>
+
+                <h2>{{mainvm.currentmember.firstName}} {{mainvm.currentmember.middleInitial}}
+                    {{mainvm.currentmember.surname}}</h2>
+                <img ng-src="{{mainvm.currentmember.portrait}}" alt="" class="paddings hero-img"/>
+
+                <h3> {{mainvm.currentmember.occupation}}</h3>
+
+                <h3> {{mainvm.currentmember.company}}</h3>
+
+                <h3>"{{mainvm.currentmember.motto}}"</h3>
+
+        </div>
+
+        <div class="members-table">
+
+            <div dir-fix>
+                <table class="head">
+                    <tr>
+                        <th ng-click="mainvm.sortFunc('surname')">Name</th>
+                        <th ng-click="mainvm.sortFunc('occupation')">Occupation</th>
+                        <th ng-click="mainvm.sortFunc('company')">Company</th>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <table class="head">
+                    <tr class="hover" ng-repeat="member in mainvm.filteredMembers track by member.id"
+                        ng-click="mainvm.changemember(member.id)"
+                        ng-class="{'active':member.id==mainvm.currentmemberid }">
+
+                        <td>{{member.firstName}} {{member.middleInitial}} {{member.surname}}</td>
+                        <td>{{member.occupation}}</td>
+                        <td>{{member.company}}</td>
+
+                    </tr>
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://code.angularjs.org/1.3.16/angular.min.js"></script>
+<script src="js/ux.members-module.js"></script>
+<script src="js/searchString.js"></script>
+<script src="js/main-controller.js"></script>
+
+<script src="js/fix-directive.js"></script>
+</body>
+</html>

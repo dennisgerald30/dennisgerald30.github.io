@@ -1,0 +1,168 @@
+html,
+body {
+  font-family: sans-serif;
+  font-size: .85em;
+  margin: 0;
+}
+html *,
+body * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  font-size: 100%;
+}
+.fix-center {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+}
+.fix {
+  position: relative;
+}
+.container {
+  margin: 20px auto;
+  width: 65%;
+}
+.container .clear {
+  clear: both;
+}
+.container h1 {
+  font-size: 26px;
+  font-weight: bold;
+  padding: 10px;
+}
+.container .search {
+  height: 27px;
+  width: 100%;
+  border: 1px solid #a4c3ca;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 50px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 #ffffff;
+}
+.container .right {
+  float: right;
+  margin: 20px 0;
+}
+.container .members-details {
+  width: 25%;
+  float: right;
+  border: solid;
+  text-align: center;
+}
+.container .members-details h2 {
+  font-size: 20px;
+  padding: 10px 10px 10px 0px;
+  font-weight: bold;
+}
+.container .members-details h3 {
+  font-size: 15px;
+  padding: 10px 10px 10px 0px;
+}
+.container .members-table {
+  width: 70%;
+}
+.container .members-table .head {
+  width: 100%;
+}
+.container .members-table .head .hover:hover {
+  cursor: pointer;
+}
+.container .members-table .head .active {
+  background-color: #6699FF;
+}
+.container .members-table td,
+.container .members-table th {
+  padding: 10px;
+  width: 33.33%;
+  border: 1px solid;
+}
+.container .members-table tr:nth-child(odd) {
+  background-color: #E0E0E0 ;
+}
+.container .members-table th {
+  font-size: 13px;
+  font-weight: bold;
+  background-color: #989898 ;
+}
+@media screen and (min-width: 932px) and (max-width: 1400px) {
+  .container {
+    width: 95%;
+  }
+}
+@media screen and (min-width: 669px) and (max-width: 931px) {
+  .container {
+    width: 95%;
+  }
+  .container .full-width {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 668px) {
+  .container {
+    width: 95%;
+  }
+  .container .members-table {
+    width: 100%;
+  }
+  .container .right {
+    float: none;
+    margin: 5px 0;
+  }
+  .container .members-details {
+    margin: 10px auto;
+    width: 65%;
+    float: none;
+  }
+  .container .fix {
+    position: static;
+  }
+}
+@media screen and (min-width: 330px) and (max-width: 481px) {
+  .container {
+    width: 95%;
+  }
+  .container .members-table {
+    width: 100%;
+  }
+  .container .right {
+    float: none;
+    margin: 5px 0;
+  }
+  .container .members-details {
+    margin: 10px auto;
+    width: 65%;
+    float: none;
+  }
+  .container .fix {
+    position: static;
+  }
+}
+@media print {
+  footer {
+    page-break-after: always;
+  }
+  .container {
+    width: 95%;
+  }
+  .container .members-table {
+    width: 100%;
+  }
+  .container .right {
+    float: none;
+    margin: 5px 0;
+  }
+  .container .members-details {
+    margin: 10px auto;
+    width: 65%;
+    float: none;
+  }
+  .container .fix {
+    position: static;
+  }
+}
