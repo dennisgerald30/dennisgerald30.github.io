@@ -1,0 +1,46 @@
+
+
+<div class="div-style hero">
+
+
+    <img ng-src="{{mainvm.currentitem.imageURLs.lg}}" alt="" class="paddings hero-img"/>
+    <div class="herobutton-div">
+        <button type="button"
+                ng-click="mainvm.pricealert(mainvm.currentitem.ProductInfo.p_product_price)"
+                class="price-style middle button-style">Add
+            To Cart
+        </button>
+        <p class="price-style middle">{{mainvm.currentitem.ProductInfo.p_product_price | currency}}
+        </p>
+    </div>
+    <div>
+        <p class="paddings price-style">{{mainvm.currentitem.ProductInfo.p_product_description}}</p>
+
+
+        <p class="paddings price-style">* {{mainvm.currentitem.ProductInfo.Brand}}</p>
+
+        <p class="paddings price-style">* {{mainvm.currentitem.ProductInfo.p_product_specs.Value[1].Key}} :
+            {{mainvm.currentitem.ProductInfo.p_product_specs.Value[1].Value}}</p>
+
+        <p class="paddings price-style">* {{mainvm.currentitem.ProductInfo.p_product_specs.Value[2].Key}} :
+            {{mainvm.currentitem.ProductInfo.p_product_specs.Value[2].Value}}</p>
+
+    </div>
+
+</div>
+<!--<div ng-repeat=""-->
+<div class="flex">
+    <div ng-repeat="product in mainvm.products" ng-mouseenter="mainvm.changeitem($index)"
+         class="div-style singleproduct-div">
+
+        <img ng-src="{{product.imageURLs.sm}}" alt="" class="paddings sm-img"/>
+
+        <p class="paddings center desc-style">{{product.ProductInfo.p_product_description}}</p>
+
+        <p class="paddings center price-style">{{product.ProductInfo.p_product_price | currency}}
+        </p>
+
+            <a href="index.html#/details/{{$index}}" class="price-style button-style paddings button-div">View More</a>
+            <!--<button type="button" class="price-style button-style">View More</button>-->
+    </div>
+</div>

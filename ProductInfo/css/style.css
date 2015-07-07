@@ -1,0 +1,217 @@
+* {
+    box-sizing: border-box;
+}
+
+.paddings {
+    padding: 10px;
+}
+
+.container {
+    margin: 30px auto;
+    width: 60%;
+
+}
+
+.hero {
+    margin: 10px;
+    overflow: auto;
+}
+
+.hero-img{
+    float: left;
+}
+
+.desc-style {
+    height: 75px;
+}
+
+.herobutton-div button{
+    width: 75%;
+}
+
+
+
+.button-style:hover {
+    cursor: pointer;
+}
+
+.price-style {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+.div-style {
+    background-color: #e5e5e5;
+    border: #Bcbcbc solid;
+}
+
+.herobutton-div {
+
+    width: 30%;
+    float: right;
+    text-align: center;
+
+}
+
+.middle {
+    margin: 20px;
+
+}
+
+.button-style {
+    padding: 5px;
+    color: #000;
+    background: #B7b7b7;
+    border: #606060 solid;
+    text-decoration: none;
+}
+
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none !important;
+}
+
+.flex button {
+    width: 98%;
+}
+
+.herobutton-div p {
+    margin-top: 20px;
+}
+
+.singleproduct-div {
+
+    display: inline-block;
+    margin: 10px;
+    width: 31.5%;
+    padding: 20px;
+
+}
+
+.clear-fix {
+    clear: both;
+}
+
+.flex {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.center {
+    text-align: center;
+}
+
+.sm-img {
+    margin: auto;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.button-div {
+    display: block;
+    text-align: center;
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1800px) {
+    .container {
+        width: 60%;
+    }
+
+    .singleproduct-div {
+        width: 30.8%;
+    }
+
+    .desc-style{
+        height: 110px;
+    }
+}
+
+@media screen and (min-width: 1135px) and (max-width: 1400px) {
+    .container {
+        width: 95%;
+    }
+
+    .singleproduct-div {
+        width: 31.3%;
+    }
+}
+
+@media screen and (min-width: 866px) and (max-width: 1134px) {
+    .container {
+        width: 95%;
+    }
+
+    .singleproduct-div {
+        width: 30.8%;
+    }
+
+    .desc-style{
+        height: 100px;
+    }
+}
+
+@media screen and (min-width: 721px) and (max-width: 865px) {
+    .container {
+        width: 95%;
+    }
+
+    .singleproduct-div {
+        width: 30%;
+    }
+
+    .desc-style{
+        height: 100px;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 720px) {
+    .container {
+        width: 95%;
+
+    }
+
+    .hero {
+        margin: 5px;
+    }
+
+    .singleproduct-div {
+        width: 47%;
+        padding: 0%;
+        margin: 5px;
+    }
+
+    .hero-img {
+        margin: auto;
+        float: none;
+        display: table-cell;
+        vertical-align: middle;
+        width: 30%;
+    }
+
+    .sm-img {
+        width: 40%;
+    }
+
+    p, .price-style {
+        font-size: 1em;
+    }
+
+    .paddings {
+        padding: 5px;
+    }
+
+    .middle {
+        margin: 0px;
+    }
+
+    .herobutton-div p {
+        margin-top: 15px;
+    }
+
+    .desc-style{
+        height: 120px;
+    }
+}
